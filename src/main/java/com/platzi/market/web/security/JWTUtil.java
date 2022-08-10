@@ -16,11 +16,13 @@ public class JWTUtil {
     @Autowired
     private Environment env;
 
+    private static final String KEY = "Q1w2e3r4t5.";
+
     public String generateToken(UserDetails user) {
         return Jwts.builder().setSubject(user.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-                .signWith(SignatureAlgorithm.HS256, env.getProperty("KEY_TOKEN"))
+                .signWith(SignatureAlgorithm.HS256, KEY)
                 .compact();
     }
 
@@ -37,6 +39,6 @@ public class JWTUtil {
     }
 
     public Claims getClaims(String token) {
-        return Jwts.parser().setSigningKey(env.getProperty("KEY_TOKEN")).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
     }
 }
