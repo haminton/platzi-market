@@ -10,6 +10,6 @@ public class SaludarController {
 
     @GetMapping(value = "/hola")
     public String saludar() {
-        return "Hola Haminton!!";
+        return "Hola Haminton";
     }
 }
