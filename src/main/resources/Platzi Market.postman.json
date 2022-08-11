@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "f35a556f-61a4-42cb-9e48-f281319aca0b",
+		"name": "Platzi Market",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "compras",
+			"item": [
+				{
+					"name": "get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/purchases/all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"purchases",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/purchases/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"purchases",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 04:05:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"purchaseId\": 1,\n        \"clientId\": \"4546221\",\n        \"date\": \"1992-08-10T17:30:00\",\n        \"paymentMethod\": \"E\",\n        \"comment\": \"\",\n        \"items\": [\n            {\n                \"productId\": 1,\n                \"quantity\": 10,\n                \"total\": 3000,\n                \"active\": true\n            },\n            {\n                \"productId\": 24,\n                \"quantity\": 1,\n                \"total\": 4000,\n                \"active\": true\n            },\n            {\n                \"productId\": 27,\n                \"quantity\": 1,\n                \"total\": 9000,\n                \"active\": true\n            },\n            {\n                \"productId\": 36,\n                \"quantity\": 1,\n                \"total\": 40000,\n                \"active\": true\n            },\n            {\n                \"productId\": 49,\n                \"quantity\": 2,\n                \"total\": 16400,\n                \"active\": true\n            }\n        ],\n        \"state\": \"P\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "compras por cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/purchases/4546221",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"purchases",
+								"4546221"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "compras por cliente",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/purchases/4546221",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"purchases",
+										"4546221"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 04:07:29 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"purchaseId\": 1,\n        \"clientId\": \"4546221\",\n        \"date\": \"1992-08-10T17:30:00\",\n        \"paymentMethod\": \"E\",\n        \"comment\": \"\",\n        \"items\": [\n            {\n                \"productId\": 1,\n                \"quantity\": 10,\n                \"total\": 3000,\n                \"active\": true\n            },\n            {\n                \"productId\": 24,\n                \"quantity\": 1,\n                \"total\": 4000,\n                \"active\": true\n            },\n            {\n                \"productId\": 27,\n                \"quantity\": 1,\n                \"total\": 9000,\n                \"active\": true\n            },\n            {\n                \"productId\": 36,\n                \"quantity\": 1,\n                \"total\": 40000,\n                \"active\": true\n            },\n            {\n                \"productId\": 49,\n                \"quantity\": 2,\n                \"total\": 16400,\n                \"active\": true\n            }\n        ],\n        \"state\": \"P\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Guardar compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientId\": \"4546221\",\n    \"date\": \"2022-08-03T17:30:00\",\n    \"paymentMethod\": \"T\",\n    \"comment\": \"\",\n    \"state\": \"P\",\n    \"items\": [\n        {\n            \"productId\": 27,\n            \"quantity\": 1,\n            \"total\": 9000,\n            \"active\": true\n        },\n        {\n            \"productId\": 36,\n            \"quantity\": 1,\n            \"total\": 40000,\n            \"active\": true\n        },\n        {\n            \"productId\": 49,\n            \"quantity\": 2,\n            \"total\": 16400,\n            \"active\": true\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/purchases/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"purchases",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"hamin\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/authenticate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/products/all",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 17:19:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 1,\n        \"name\": \"Guayaba Feijoa\",\n        \"categoryId\": 1,\n        \"price\": 300,\n        \"stock\": 500,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 2,\n        \"name\": \"Mango\",\n        \"categoryId\": 1,\n        \"price\": 2100,\n        \"stock\": 250,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 3,\n        \"name\": \"Manzana\",\n        \"categoryId\": 1,\n        \"price\": 700,\n        \"stock\": 130,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 4,\n        \"name\": \"Aguacate\",\n        \"categoryId\": 1,\n        \"price\": 2500,\n        \"stock\": 98,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 5,\n        \"name\": \"Lechuga\",\n        \"categoryId\": 1,\n        \"price\": 4000,\n        \"stock\": 86,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 6,\n        \"name\": \"Tomate\",\n        \"categoryId\": 1,\n        \"price\": 290,\n        \"stock\": 430,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 7,\n        \"name\": \"Pera\",\n        \"categoryId\": 1,\n        \"price\": 750,\n        \"stock\": 210,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 8,\n        \"name\": \"Apio\",\n        \"categoryId\": 1,\n        \"price\": 150,\n        \"stock\": 115,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 9,\n        \"name\": \"Papaya\",\n        \"categoryId\": 1,\n        \"price\": 4500,\n        \"stock\": 73,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 10,\n        \"name\": \"Limón\",\n        \"categoryId\": 1,\n        \"price\": 350,\n        \"stock\": 425,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 11,\n        \"name\": \"Brownie\",\n        \"categoryId\": 2,\n        \"price\": 2500,\n        \"stock\": 80,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 12,\n        \"name\": \"Pan tajado\",\n        \"categoryId\": 2,\n        \"price\": 4500,\n        \"stock\": 120,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 13,\n        \"name\": \"Torta\",\n        \"categoryId\": 2,\n        \"price\": 10000,\n        \"stock\": 35,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 14,\n        \"name\": \"Tortilla\",\n        \"categoryId\": 2,\n        \"price\": 6400,\n        \"stock\": 87,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 15,\n        \"name\": \"Tostadas\",\n        \"categoryId\": 2,\n        \"price\": 4000,\n        \"stock\": 45,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 16,\n        \"name\": \"Chocorramo\",\n        \"categoryId\": 2,\n        \"price\": 2000,\n        \"stock\": 105,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 17,\n        \"name\": \"Salmón\",\n        \"categoryId\": 3,\n        \"price\": 28000,\n        \"stock\": 55,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 18,\n        \"name\": \"Punta de anca\",\n        \"categoryId\": 3,\n        \"price\": 12000,\n        \"stock\": 32,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 19,\n        \"name\": \"Posta\",\n        \"categoryId\": 3,\n        \"price\": 7800,\n        \"stock\": 40,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 20,\n        \"name\": \"Costilla de cerdo\",\n        \"categoryId\": 3,\n        \"price\": 8600,\n        \"stock\": 70,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 21,\n        \"name\": \"Tilapia\",\n        \"categoryId\": 3,\n        \"price\": 17000,\n        \"stock\": 60,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 22,\n        \"name\": \"Merluza\",\n        \"categoryId\": 3,\n        \"price\": 23000,\n        \"stock\": 45,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 23,\n        \"name\": \"Leche de vaca\",\n        \"categoryId\": 4,\n        \"price\": 2500,\n        \"stock\": 500,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 4,\n            \"category\": \"Lácteos y huevos\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 24,\n        \"name\": \"Queso\",\n        \"categoryId\": 4,\n        \"price\": 4000,\n        \"stock\": 300,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 4,\n            \"category\": \"Lácteos y huevos\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 25,\n        \"name\": \"Huevos de gallina feliz\",\n        \"categoryId\": 4,\n        \"price\": 400,\n        \"stock\": 1000,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 4,\n            \"category\": \"Lácteos y huevos\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 26,\n        \"name\": \"Clara de huevo\",\n        \"categoryId\": 4,\n        \"price\": 3200,\n        \"stock\": 200,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 4,\n            \"category\": \"Lácteos y huevos\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 27,\n        \"name\": \"Suero costeño\",\n        \"categoryId\": 4,\n        \"price\": 9000,\n        \"stock\": 110,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 4,\n            \"category\": \"Lácteos y huevos\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 28,\n        \"name\": \"Agua\",\n        \"categoryId\": 5,\n        \"price\": 2000,\n        \"stock\": 600,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 5,\n            \"category\": \"Bebidas\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 29,\n        \"name\": \"Jugo de naranja\",\n        \"categoryId\": 5,\n        \"price\": 7400,\n        \"stock\": 200,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 5,\n            \"category\": \"Bebidas\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 30,\n        \"name\": \"Gaseosa Colombiana\",\n        \"categoryId\": 5,\n        \"price\": 3100,\n        \"stock\": 175,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 5,\n            \"category\": \"Bebidas\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 31,\n        \"name\": \"Jugo de Lulo\",\n        \"categoryId\": 5,\n        \"price\": 8250,\n        \"stock\": 630,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 5,\n            \"category\": \"Bebidas\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 32,\n        \"name\": \"Tea\",\n        \"categoryId\": 5,\n        \"price\": 1900,\n        \"stock\": 450,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 5,\n            \"category\": \"Bebidas\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 33,\n        \"name\": \"Cerveza\",\n        \"categoryId\": 6,\n        \"price\": 2100,\n        \"stock\": 800,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 6,\n            \"category\": \"Licores\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 34,\n        \"name\": \"Tequila\",\n        \"categoryId\": 6,\n        \"price\": 65000,\n        \"stock\": 764,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 6,\n            \"category\": \"Licores\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 35,\n        \"name\": \"Ron\",\n        \"categoryId\": 6,\n        \"price\": 55000,\n        \"stock\": 240,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 6,\n            \"category\": \"Licores\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 36,\n        \"name\": \"Aguardiente Antioqueño\",\n        \"categoryId\": 6,\n        \"price\": 40000,\n        \"stock\": 480,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 6,\n            \"category\": \"Licores\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 37,\n        \"name\": \"Vino\",\n        \"categoryId\": 6,\n        \"price\": 82000,\n        \"stock\": 560,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 6,\n            \"category\": \"Licores\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 38,\n        \"name\": \"Crema dental\",\n        \"categoryId\": 7,\n        \"price\": 7500,\n        \"stock\": 200,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 39,\n        \"name\": \"Jabón de manos\",\n        \"categoryId\": 7,\n        \"price\": 4900,\n        \"stock\": 90,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 40,\n        \"name\": \"Enjuague bucal\",\n        \"categoryId\": 7,\n        \"price\": 12000,\n        \"stock\": 105,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 41,\n        \"name\": \"Shampoo\",\n        \"categoryId\": 7,\n        \"price\": 9300,\n        \"stock\": 200,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 42,\n        \"name\": \"Desodorante\",\n        \"categoryId\": 7,\n        \"price\": 6900,\n        \"stock\": 85,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 43,\n        \"name\": \"Arroz\",\n        \"categoryId\": 8,\n        \"price\": 3500,\n        \"stock\": 600,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 44,\n        \"name\": \"Lentejas\",\n        \"categoryId\": 8,\n        \"price\": 3000,\n        \"stock\": 560,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 45,\n        \"name\": \"Harina\",\n        \"categoryId\": 8,\n        \"price\": 1800,\n        \"stock\": 300,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 46,\n        \"name\": \"Sal\",\n        \"categoryId\": 8,\n        \"price\": 1400,\n        \"stock\": 500,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 47,\n        \"name\": \"Aceite\",\n        \"categoryId\": 8,\n        \"price\": 6500,\n        \"stock\": 135,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 48,\n        \"name\": \"Cereal\",\n        \"categoryId\": 8,\n        \"price\": 7000,\n        \"stock\": 75,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 49,\n        \"name\": \"Frijol\",\n        \"categoryId\": 8,\n        \"price\": 8200,\n        \"stock\": 270,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 50,\n        \"name\": \"Café\",\n        \"categoryId\": 8,\n        \"price\": 7200,\n        \"stock\": 400,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get product id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/products/product/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get products id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/product/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"product",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 17:21:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 1,\n    \"name\": \"Guayaba Feijoa\",\n    \"categoryId\": 1,\n    \"price\": 300,\n    \"stock\": 500,\n    \"active\": true,\n    \"category\": {\n        \"categoryId\": 1,\n        \"category\": \"Frutas y verduras\",\n        \"active\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get product category id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/products/category/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products",
+						"category",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get product category id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/category/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 17:25:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 1,\n        \"name\": \"Guayaba Feijoa\",\n        \"categoryId\": 1,\n        \"price\": 300,\n        \"stock\": 500,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get product stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/products/scarce/100",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products",
+						"scarce",
+						"100"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get product stock",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/scarce/100",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"scarce",
+								"100"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 17:26:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 4,\n        \"name\": \"Aguacate\",\n        \"categoryId\": 1,\n        \"price\": 2500,\n        \"stock\": 98,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 5,\n        \"name\": \"Lechuga\",\n        \"categoryId\": 1,\n        \"price\": 4000,\n        \"stock\": 86,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 9,\n        \"name\": \"Papaya\",\n        \"categoryId\": 1,\n        \"price\": 4500,\n        \"stock\": 73,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 1,\n            \"category\": \"Frutas y verduras\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 11,\n        \"name\": \"Brownie\",\n        \"categoryId\": 2,\n        \"price\": 2500,\n        \"stock\": 80,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 13,\n        \"name\": \"Torta\",\n        \"categoryId\": 2,\n        \"price\": 10000,\n        \"stock\": 35,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 14,\n        \"name\": \"Tortilla\",\n        \"categoryId\": 2,\n        \"price\": 6400,\n        \"stock\": 87,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 15,\n        \"name\": \"Tostadas\",\n        \"categoryId\": 2,\n        \"price\": 4000,\n        \"stock\": 45,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 2,\n            \"category\": \"Pastelería\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 17,\n        \"name\": \"Salmón\",\n        \"categoryId\": 3,\n        \"price\": 28000,\n        \"stock\": 55,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 18,\n        \"name\": \"Punta de anca\",\n        \"categoryId\": 3,\n        \"price\": 12000,\n        \"stock\": 32,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 19,\n        \"name\": \"Posta\",\n        \"categoryId\": 3,\n        \"price\": 7800,\n        \"stock\": 40,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 20,\n        \"name\": \"Costilla de cerdo\",\n        \"categoryId\": 3,\n        \"price\": 8600,\n        \"stock\": 70,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 21,\n        \"name\": \"Tilapia\",\n        \"categoryId\": 3,\n        \"price\": 17000,\n        \"stock\": 60,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 22,\n        \"name\": \"Merluza\",\n        \"categoryId\": 3,\n        \"price\": 23000,\n        \"stock\": 45,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 3,\n            \"category\": \"Carnes y pescados\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 39,\n        \"name\": \"Jabón de manos\",\n        \"categoryId\": 7,\n        \"price\": 4900,\n        \"stock\": 90,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 42,\n        \"name\": \"Desodorante\",\n        \"categoryId\": 7,\n        \"price\": 6900,\n        \"stock\": 85,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 7,\n            \"category\": \"Cuidado personal\",\n            \"active\": true\n        }\n    },\n    {\n        \"productId\": 48,\n        \"name\": \"Cereal\",\n        \"categoryId\": 8,\n        \"price\": 7000,\n        \"stock\": 75,\n        \"active\": true,\n        \"category\": {\n            \"categoryId\": 8,\n            \"category\": \"Despensa\",\n            \"active\": true\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Product save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Aguacate\",\n    \"categoryId\": 1,\n    \"price\": 2000,\n    \"stock\": 500,\n    \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/products/save",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products",
+						"save"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get product save",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aguacate\",\n    \"categoryId\": 1,\n    \"price\": 2000,\n    \"stock\": 500,\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/save",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"save"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 17:28:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 0,\n    \"name\": \"Aguacate\",\n    \"categoryId\": 1,\n    \"price\": 2000,\n    \"stock\": 500,\n    \"active\": true,\n    \"category\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Product Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/products/delete/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
